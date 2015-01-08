@@ -12,11 +12,11 @@
 
 ####効率化スクリプト
 + alpha.sh
-  - alphaを変えながら実行してくれるスクリプト
-	- 使い方
-	  1. 作業場にalpha.shを持っていく
-		1. **cp steepest_decent.c steepest_decent_test.c**を実行
-		1. **./alpha.sh a b c**
-		  - a:alpha初期値
-			- b:alpha刻み値
-			- c:alpha最大値
+ - alphaを変えながら実行してくれるスクリプト
+ - 使い方
+  1. 作業場にalpha.shを持っていく
+  1. **cp steepest_decent.c steepest_decent_test.c**を実行
+  1. **./alpha.sh a b c**
+   - a:alpha初期値
+   - b:alpha刻み値
+   - c:alpha最大値

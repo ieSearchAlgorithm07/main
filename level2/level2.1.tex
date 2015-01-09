@@ -1,6 +1,145 @@
+\subsection{Level2.1,2.2 共通部分 観察意図と観察方法}
+最急降下法の学習レートであるalphaを任意で初期値,刻み幅,最大値を決め連続関数における探索プログラムを実行し,シード値1000〜10000におけるstep数とその平均を出力してくれるスクリプトalpha.shを使用し,alphaを0.01〜0.99と刻み幅0.01で変更しながら
+step数の平均を観察する.
+これらの方法により効率的に最適解(最小値となる解)を求められる,alphaの値の発見およびalphaの変化による
+探索への影響を考察することを目的とする.
+
 \subsection{Level2.1: $y=x^2$ について}
 \subsubsection{プログラムソース（変更部分）}
-\subsubsection{観察意図と観察方法}
+
+	\begin{lstlisting}[caption=探索プログラム,label=ラベル]
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <math.h>
+
+	-------------省略----------------
+
+	double f(double x, double y) {
+  	double z;
+
+  	/** 以下の式を編集して完成させよ(1) **/
+  	z = x*x;
+
+  	return( z );
+	}
+
+	/* f(x,y)/dx
+ 	*    z=f(x,y) の微分値(偏微分値)を求め，返す．
+ 	*/
+	double pd_x(double x, double y) {
+  	double z_dx;
+
+  	/** 以下の式を編集して完成させよ(2-1) **/
+  	z_dx = 2*x;
+
+  	return( z_dx );
+	}
+
+	/* f(x,y)/dy
+ 	*    z=f(x,y) の微分値(偏微分値)を求め，返す．
+ 	*/
+	double pd_y(double x, double y) {
+  	double z_dy;
+
+  	/** 以下の式を編集して完成させよ(2-2) **/
+  	z_dy = 0;
+
+  	return( z_dy );
+	}
+
+	-------------省略----------------
+
+    return 0;
+	}
+	\end{lstlisting}
+
+
+
 \subsubsection{実行結果}
-\subsubsection{考察}
+
+  \begin{lstlisting}[caption=シェルスクリプトalpha.sh実行結果,label=ラベル]
+	alpha = 0.01
+	FINISH 3 step 592 x and y were not updated.
+	sim 1: seed=1000 -> step=591
+	FINISH 3 step 712 x and y were not updated.
+	sim 2: seed=2000 -> step=711
+	FINISH 3 step 646 x and y were not updated.
+	sim 3: seed=3000 -> step=645
+	FINISH 3 step 702 x and y were not updated.
+	sim 4: seed=4000 -> step=701
+	FINISH 3 step 671 x and y were not updated.
+	sim	5: seed=5000 -> step=670
+	FINISH 3 step 539 x and y were not updated.
+	sim 6: seed=609000 -> step=538
+	FINISH 3 step 688 x and y were not updated.
+	sim 7: seed=7000 -> step=687
+	FINISH 3 step 674 x and y were not updated.
+	sim 8: seed=8000 -> step=673
+	FINISH 3 step 701 x and y were not updated.
+	sim 9: seed=9000 -> step=700
+	FINISH 3 step 650 x and y were not updated.
+	sim 10: seed=10000 -> step=649
+	average step = 656.50
+
+	-------------省略----------------
+	
+	alpha = .50
+	
+	FINISH 3 step 2 x and y were not updated.
+	sim 1: seed=1000 -> step=1
+	FINISH 3 step 2 x and y were not updated.
+	sim 2: seed=2000 -> step=1
+	FINISH 3 step 2 x and y were not updated.
+	sim 3: seed=3000 -> step=1
+	FINISH 3 step 2 x and y were not updated.
+	sim 4: seed=4000 -> step=1
+	FINISH 3 step 2 x and y were not updated.
+	sim 5: seed=5000 -> step=1
+	FINISH 3 step 2 x and y were not updated.
+	sim 6: seed=609000 -> step=1
+	FINISH 3 step 2 x and y were not updated.
+	sim 7: seed=7000 -> step=1
+	FINISH 3 step 2 x and y were not updated.
+	sim 8: seed=8000 -> step=1
+	FINISH 3 step 2 x and y were not updated.
+	sim 9: seed=9000 -> step=1
+	FINISH 3 step 2 x and y were not updated.
+	sim 10: seed=10000 -> step=1
+	average step = 1.00
+	
+	-------------省略----------------
+	
+	alpha = .99
+	FINISH 3 step 819 x and y were not updated.
+	sim 1: seed=1000 -> step=818
+	FINISH 3 step 939 x and y were not updated.
+	sim 2: seed=2000 -> step=938
+	FINISH 3 step 874 x and y were not updated.
+	sim 3: seed=3000 -> step=873
+	FINISH 3 step 929 x and y were not updated.
+	sim 4: seed=4000 -> step=928
+	FINISH 3 step 899 x and y were not updated.
+	sim 5: seed=5000 -> step=898
+	FINISH 3 step 766 x and y were not updated.
+	sim 6: seed=609000 -> step=765
+	FINISH 3 step 916 x and y were not updated.
+	sim 7: seed=7000 -> step=915
+	FINISH 3 step 901 x and y were not updated.
+	sim 8: seed=8000 -> step=900
+	FINISH 3 step 928 x and y were not updated.
+	sim 9: seed=9000 -> step=927
+	FINISH 3 step 877 x and y were not updated.
+	sim 10: seed=10000 -> step=876
+	average step = 883.80
+	finish
+  \end{lstlisting}
+
+  \begin{lstlisting}[caption=探索プログラム実行結果,label=ラベル]
+  %./steepest_decent2_1 1000 
+  step 0 x 0.7557628633 y 2.1064439007 f(x,y) 0.1775056 5.711775e-01
+  step 1 x 0.0000000000 y 2.1064439007 f(x,y) 0.0000000000 0.000000e+00
+  FINISH 3 step 2 x and y were not updated.
+  \end{lstlisting}
+  ※シード値:1000 学習レートα:0.5(最も平均step数が少なかったαの探索結果)
+
 

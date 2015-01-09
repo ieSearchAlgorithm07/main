@@ -35,32 +35,16 @@
 \begin{document}
 
 \title{情報工学実験IIレポート（探索アルゴリズム1）}
-\author{曜日＆グループ番号: 月曜日＆グループ0} %
-\date{2014年12月14日}
+\author{金曜日＆グループ7} %
+\date{\today}
 
 \maketitle
-
-\begin{abstract}
-この骨組み（テンプレート）を利用する際には、
-不要な箇所を削除した上で提出すること。
-例えばこの要旨やコメント文の殆どは
-「當間から学生へのコメント」であって、
-「課題に対するレポート（報告書）」ではない。
-
-このレポート（ファイル）は、「情報工学実験II・探索アルゴリズムその
-1\cite{info2-search1}」の実験レポートの骨組みを例示している。
-あくまでも例示であって、全てをこの通りに従う必要はないが、
-指示された項目を含めた上で、
-報告書として他者が読みやすいレポートとなるよう考慮すること。
-\end{abstract}
-
 \section*{グループメンバ}
-（補足：レベル毎に \underline{全員が協力して実施} した上で、レベル毎にレポートをまとめる担当者を決め、全体を一つのレポートとして整理すること。分担方法も自由である。）
 \begin{itemize}
- \item 945734J 當間愛晃: 担当Level1.1, 1.2
- \item 945700 hoge: 担当Level2.1, 2,2
- \item 945700 hoge: 担当Level2.3, 3.1
- \item 945700 hoge: 担当Level3.2
+ \item 135712D 山城義弘: 担当Level1.1, 1.2
+ \item 135706K 喜友名 朝稔: 担当Level2.1, 2.2
+ \item 135719B 澤崎夏希: 担当Level2.3, 3.1
+ \item 135740K 大城朝貴: 担当Level4.1, 4.2
 \end{itemize}
 
 \section*{提出したレポート一式について}
@@ -70,25 +54,24 @@
 提出したファイルのディレクトリ構成は以下の通りである。
 
 \vspace{+0.5cm}
-（補足：必ず下記のように整理しろという指定ではない。
 自分たちでやりやすいようにLevel毎に整理しても構わない）
 \begin{breakbox}
 \begin{verbatim}
-./src/      # 作成したプログラム一式
+./scr/      # 作成したプログラム一式
 ./report/   # レポート関係ファイル．図ファイルを含む．
 \end{verbatim}
 \end{breakbox}
 
 \newpage
-
 \section{Leve l1: 探索とは}
+以下は『人工知能研究\cite{level1}』を参考に記述した．
 \input{level1/level1.1}
 \input{level1/level1.2}
 
 \newpage
 
 \section{Level 2: 最急降下法による最適化}
-\input{level2/level2.0} %共通部分の結果及び考察
+以下は『最急降下法\cite{level2}』を参考に記述した．
 \input{level2/level2.1}
 \input{level2/level2.2}
 \input{level2/level2.3}
@@ -96,28 +79,34 @@
 \newpage
 
 \section{Level 3: 最急降下法が苦手とする状況}
-\input{level3/level3.0} %課題説明+提案解説
 \input{level3/level3.1}
-\input{level3/level3.2}
 
 \newpage
 
 \section{Level 4: モデル推定時における目的関数の設計}
+以下は『最適化問題\cite{level401}』参考に記述した．
 \input{level4/level4.1}
 \input{level4/level4.2}
 
 
 \vspace{+1.0cm}
-（補足：参考文献は thebibliography 環境を使って列挙し、
-本文中で適切な箇所で引用するようにしましょう。
-例えば下記文献は、アブストラクトやLevel 4で引用しています）
 \begin{thebibliography}{99}
 \bibitem{info2-search1}
 情報工学実験2: 探索アルゴリズムその1（當間）\\
 \verb|http://www.eva.ie.u-ryukyu.ac.jp/~tnal/2013/info2/search1/|
-\bibitem{housingdata}
-Housing Data Set\\
-\verb|http://archive.ics.uci.edu/ml/datasets/Housing|
+\bibitem{level1}
+人工知能研究\\
+\verb|http://www.ai-gakkai.or.jp/whatsai/AIresearch.html|
+\bibitem{level2}
+最急降下法\\
+\verb|http://dsl4.eee.u-ryukyu.ac.jp/DOCS/nlp/node4.html|
+\bibitem{level401}
+最適化問題\\
+\verb|http://www.wikiwand.com/ja/%E6%9C%80%E9%81%A9%E5%8C%96%E5%95%8F%E9%A1%8C|
+\bibitem{level402}
+シェルスクリプト リファレンス\\
+\verb|http://shellscript.sunone.me/|
+
 \end{thebibliography}
 
 \end{document}

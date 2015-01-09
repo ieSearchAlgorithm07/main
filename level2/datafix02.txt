@@ -1,2 +1,0 @@
-LOOP 0:FINISH 2 step 2 x_rearched_to 11.4447614972 y_reached_to -6.3230138441 f(x,y) -0.9008003407
-LOOP 1:FINISH 2 step 2 x_rearched_to -11.2187043578 y_reached_to 9.9520592857 f(x,y) 0.9752095958
